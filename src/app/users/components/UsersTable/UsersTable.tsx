@@ -1,15 +1,12 @@
-'use client'
-
 import { useUsers } from '@/hooks/useUsers'
 import styles from './usersTable.module.css'
 import { useRouter } from 'next/navigation'
-import { useEffect } from 'react'
 
 export function UsersTable() {
-  const { data: users, isLoading, error } = useUsers()
+  const { data: users, isLoading, isFetching, error } = useUsers()
   const router = useRouter()
 
-  if (isLoading) {
+  if (isLoading || isFetching) {
     return <p className={styles.loading}>🔄 Carregando usuários...</p>
   }
 
@@ -22,12 +19,8 @@ export function UsersTable() {
   }
 
   const handleEdit = (userId: string) => {
-    router.push(`/users/create?id=${userId}`)
+    router.push(`/users/create/${userId}`)
   }
-
-  // useEffect(() => { 
-  //   console.log('Usuários carregados:', users)
-  // },[users])
 
   return (
     <div className={styles.container}>
@@ -45,7 +38,9 @@ export function UsersTable() {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>
-                <button className={styles.button} onClick={() => handleEdit(user.id)}>Editar</button>
+                <button className={styles.button} onClick={() => handleEdit(user.id)}>
+                  Editar
+                </button>
               </td>
             </tr>
           ))}

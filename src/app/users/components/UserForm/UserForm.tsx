@@ -2,7 +2,7 @@
 
 import { User } from "@/services/users"
 import styles from './userForm.module.css'
-import { useState, FormEvent, useEffect } from "react"
+import { useState, FormEvent, useEffect, useMemo } from "react"
 import { Loading } from "../ui/Loading" 
 
 type FormState = {
@@ -19,19 +19,12 @@ type Props = {
 export function UserForm({ defaultValues, onSubmit, loading }: Props) {
     const [errors, setErrors] = useState<Partial<Record<keyof User, string>>>({})
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [formData, setFormData] = useState<Omit<FormState, 'id'>>({
-        name: '',
-        email: '',
-    })
+    const initialFormData = useMemo(() => ({
+    name: defaultValues?.name || '',
+    email: defaultValues?.email || '',
+    }), [defaultValues])
 
-    useEffect(() => {
-        if (defaultValues) {
-            setFormData({
-                name: defaultValues.name || '',
-                email: defaultValues.email || '',
-            })
-        }
-    }, [defaultValues]) 
+    const [formData, setFormData] = useState<Omit<FormState, 'id'>>(initialFormData)
 
     const validateForm = (): boolean => {
         const newErrors: Partial<Record<keyof User, string>> = {}
