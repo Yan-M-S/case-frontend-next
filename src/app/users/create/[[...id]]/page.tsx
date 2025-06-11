@@ -1,9 +1,8 @@
 'use client'
 
 import { use } from 'react'
-import { useQuery } from '@tanstack/react-query'
 import { UserForm } from '../../components/UserForm/UserForm'
-import { getUserById, User } from '@/services/users'
+import { User } from '@/services/users'
 import { useCreateUser, useUpdateUser } from '../../../../hooks/useUserMutations'
 import { Loading } from '../../components/ui/Loading'
 import { useUserById } from '@/hooks/useUserById'

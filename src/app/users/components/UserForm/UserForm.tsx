@@ -2,7 +2,7 @@
 
 import { User } from "@/services/users"
 import styles from './userForm.module.css'
-import { useState, FormEvent, useEffect, useMemo } from "react"
+import { useState, FormEvent, useMemo } from "react"
 import { Loading } from "../ui/Loading" 
 
 type FormState = {
