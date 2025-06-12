@@ -1,33 +1,61 @@
-# 📦 Frontend - User Management App
+# 🌀 Frontend - User Management App
 
-Este é o frontend da aplicação de gerenciamento de usuários, desenvolvido com **Next.js 15** e executado com **Node.js 22+**.
+A Web Application built with Next.js 15, focused on performance, reactivity with asynchronous data via React Query, and written in TypeScript. This project showcases modern development practices within the React ecosystem.
 
-## 🚀 Tecnologias
+---
 
-- [Next.js 15](https://nextjs.org/)
-- [React 18+](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [React Query (TanStack)](https://tanstack.com/query/latest)
-- [Axios](https://axios-http.com/)
-- [CSS Modules](https://nextjs.org/docs/pages/building-your-application/styling/css-modules)
+## ⚙️ Technologies
 
-## ✅ Pré-requisitos
+- ⚛️ *React 18+*
+- ⏩ *Next.js 15 (App Router)*
+- 🧠 *React Query v5* (@tanstack/react-query)
+- 🟦 *TypeScript*
+- 💅 *CSS Modules*
+- 🌐 *Axios*
+- 🧩 *ESLint* + *Babel*
+- 📦 *Node.js 22+*
 
-- **Node.js 22 ou superior**
-- **npm** ou **yarn**
+---
 
-## 📦 Instalação
+## ▶️ Running the Project
 
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/seu-repo.git
+### 1. Clone the repository
 
-# Acesse a pasta do projeto
-cd nome-do-projeto
+- *Node.js 22+* 
 
-# Instale as dependências
-npm install
+bash
+git clone https://github.com/your_user/your-repo.git
+cd your-repo
+
+
+### 2. Install the dependencies
+
+bash
+yarn
 # ou
-yarn install
+npm install
 
-# vai estar rodando na porta 3000
+
+### 3. Run the project in development mode
+
+bash
+yarn dev
+# ou
+npm run dev
+
+
+---
+
+## 🎯 Features
+
+- Dynamic data listing with React Query
+- Create, Edit and delete functionality with optimistic feedback 
+- Integration with external API using Axios
+- Type safety and best practices with ESLint and TypeScript
+
+---
+
+
+
+build: next build
+start: next start
