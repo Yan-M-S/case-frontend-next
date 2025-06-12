@@ -32,7 +32,7 @@ cd your-repo
 
 bash
 yarn
-# ou
+# or
 npm install
 
 
@@ -40,7 +40,7 @@ npm install
 
 bash
 yarn dev
-# ou
+# or
 npm run dev
 
 
