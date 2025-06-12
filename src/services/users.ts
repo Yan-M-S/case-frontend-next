@@ -13,7 +13,7 @@ export const getUsers = async (): Promise<User[]> => {
     const response = await api.get<User[]>('/users')
     return response.data
   } catch (error) {
-    throw new Error('Erro ao buscar usuários.')
+    throw new Error('Users not found.')
   }
 }
 
@@ -22,7 +22,7 @@ export const getUserById = async (id: string): Promise<User | undefined> => {
     const response = await api.get<User>(`/users/${id}`)
     return response.data
   } catch (error) {
-    throw new Error('Erro ao buscar os dados do usuário.')
+    throw new Error('Error on get User Data by id.')
   }
 }
 
@@ -33,7 +33,7 @@ export const createUser = async (
     const response = await api.post<User>('/users', user)
     return response.data
   } catch (error) {
-    throw new Error('Erro ao criar o usuário.')
+    throw new Error('Error on Create User.')
   }
 }
 
@@ -45,7 +45,7 @@ export const updateUser = async (
     const response = await api.put<User>(`/users/${id}`, user)
     return response.data
   } catch (error) {
-    throw new Error('Erro ao atualizar o usuário.')
+    throw new Error('Error on Update User.')
   }
 }
 
@@ -56,6 +56,6 @@ export const deleteUser = async (id: string): Promise<void> => {
     if (axios.isAxiosError(error) && error.response?.data?.message) {
       throw new Error(error.response.data.message)
     }
-    throw new Error('Erro ao deletar o usuário.')
+    throw new Error('Error on Delete User.')
   }
 }
