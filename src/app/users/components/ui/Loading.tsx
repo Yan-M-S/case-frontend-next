@@ -1,5 +1,3 @@
-'use client'
-
 import styles from './Loading.module.css'
 
 export function Loading({ message = 'Processando...' }: { message?: string }) {

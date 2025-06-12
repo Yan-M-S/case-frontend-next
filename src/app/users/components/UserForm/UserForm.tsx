@@ -1,5 +1,3 @@
-'use client'
-
 import { User } from "@/services/users"
 import styles from './userForm.module.css'
 import { useState, FormEvent, useMemo } from "react"
